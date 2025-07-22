@@ -22,7 +22,7 @@
         <sonar.projectKey>my-devops-project</sonar.projectKey>
         <sonar.projectName>my-devops-project</sonar.projectName>
         <sonar.host.url>http://localhost:9000</sonar.host.url>
-        <sonar.login>sqp_4183b6d488c9da7a158b5ced3106bc6c2873887b</sonar.login>
+        <sonar.login>sqp_fa39803d4d971fd8c8ad5b7ad477c8fec13d5d59</sonar.login>
     </properties>
 
     <dependencies>
