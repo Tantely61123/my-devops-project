@@ -13,7 +13,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git credentialsId: 'git_credentials', url: 'https://github.com/Tantely61123/my-devops-project.git'
+                git branch: 'main', git credentialsId: 'git_credentials', url: 'https://github.com/Tantely61123/my-devops-project.git'
             }
         }
 
