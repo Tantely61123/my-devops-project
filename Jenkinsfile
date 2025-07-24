@@ -36,11 +36,17 @@ pipeline {
             }
         }
 
-        stage('Build Docker Image') {
-            steps {
-                bat "docker build -t $IMAGE_NAME ."
-            }
+stage('Build Docker Image') {
+    steps {
+        script {
+            // Vérifiez d'abord que le fichier JAR existe
+            bat 'dir target\\'
+            
+            // Construction de l'image avec le bon nom de fichier
+            docker.build("tantely007/monprojetci:1.0.0")
         }
+    }
+}
 
         stage('Push DockerHub') {
             steps {
