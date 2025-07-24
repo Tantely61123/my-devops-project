@@ -26,27 +26,27 @@ pipeline {
 
         stage('Build') {
             steps {
-                sh 'mvn clean package'
+                bat 'mvn clean package'
             }
         }
 
         stage('Test') {
             steps {
-                sh 'mvn test'
+                bat 'mvn test'
             }
         }
 
         stage('Build Docker Image') {
             steps {
-                sh "docker build -t $IMAGE_NAME ."
+                bat "docker build -t $IMAGE_NAME ."
             }
         }
 
         stage('Push DockerHub') {
             steps {
                 withCredentials([string(credentialsId: 'dockerhubpass', variable: 'dockerHubPass')]) {
-                    sh "docker login -u $DOCKER_HUB_USER -p $dockerHubPass"
-                    sh "docker push $IMAGE_NAME"
+                    bat "docker login -u $DOCKER_HUB_USER -p $dockerHubPass"
+                    bat "docker push $IMAGE_NAME"
                 }
             }
         }
